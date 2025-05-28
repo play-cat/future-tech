@@ -44,7 +44,7 @@ https://play-cat.github.io/future-tech/contacts.html
 ## 🛠 Build Tools
 
 - **vite-plugin-handlebars**
-- used for modularizing all pages and his parts/
+  -- used for modularizing all pages and his parts/
 
 ## ✨ Features
 
@@ -52,7 +52,7 @@ https://play-cat.github.io/future-tech/contacts.html
 - ✅ Fixed mobile navigation
 - ✅ Contacts forms with validation
 - ✅ Input mask fot phone number in form
-- ✅ <picture> tag for images
+- ✅ < picture > tag for images
 
 ## For communication
 
