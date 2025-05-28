@@ -2,11 +2,28 @@
 
 ## Demo
 
+### Home
+
 https://play-cat.github.io/future-tech/index.html
+
+### News
+
 https://play-cat.github.io/future-tech/news.html
+
+### Blog
+
 https://play-cat.github.io/future-tech/blog.html
+
+### Podcasts
+
 https://play-cat.github.io/future-tech/podcasts.html
+
+### Resources
+
 https://play-cat.github.io/future-tech/resources.html
+
+### Contacts
+
 https://play-cat.github.io/future-tech/contacts.html
 
 ## 📸 Screenshot
