@@ -1,8 +1,8 @@
 const menuLinks = document.querySelectorAll('.header__menu-link');
 
 const headerMenuChangeActiveLink = () => {
-  const currentPath = window.location.pathname.replace(/^\/|\/$/g, '');
-
+  // const currentPath = window.location.pathname.replace(/^\/|\/$/g, '');
+  const currentPath = window.location.pathname.replace(/^.*\//, '');
   menuLinks.forEach(menuLink => {
     const href = menuLink.getAttribute('href');
 
