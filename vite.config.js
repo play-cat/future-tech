@@ -31,7 +31,7 @@ const inputPages = htmlPages.reduce((entries, page) => {
 }, {});
 
 export default defineConfig({
-  // base: '/future-tech/',
+  base: '/future-tech/',
 
   css: {
     devSourcemap: true, // Увімкнення сорс-мап у режимі розробки
