@@ -31,6 +31,8 @@ const inputPages = htmlPages.reduce((entries, page) => {
 }, {});
 
 export default defineConfig({
+  base: '/future-tech/',
+
   css: {
     devSourcemap: true, // Увімкнення сорс-мап у режимі розробки
     preprocessorOptions: {
@@ -118,7 +120,7 @@ export default defineConfig({
   ],
 
   build: {
-    outDir: 'docs',
+    outDir: 'dist',
     emptyOutDir: true, // очищує папку dist перед створенням нових файлів
     assetsInlineLimit: 0, // щоб запобігти інлайнінгу svg файлів
     rollupOptions: {
