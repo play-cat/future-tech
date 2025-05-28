@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 export async function optimizeImages() {
-  const imageDir = path.resolve(__dirname, 'dist/assets');
+  const imageDir = path.resolve(__dirname, 'docs/assets');
   const files = fs.readdirSync(imageDir);
 
   for (const file of files) {

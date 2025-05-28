@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 export async function wrapImgWithPicture() {
-  const htmlDir = path.resolve(__dirname, 'dist');
+  const htmlDir = path.resolve(__dirname, 'docs');
   const files = fs.readdirSync(htmlDir);
 
   for (const file of files) {
