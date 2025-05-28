@@ -1,0 +1,24 @@
+@use '../helpers' as *;
+
+.rating-view {
+  @include flex-center;
+
+  gap: 7px;
+  padding: 10px 16px;
+  background-color: var(--color-dark);
+  border-radius: 80px;
+  border: var(--border);
+
+  @include laptop {
+    padding: 8px 12px;
+    gap: 4px;
+  }
+
+  &__star {
+    &::after {
+      @include laptop {
+        --size: 20px;
+      }
+    }
+  }
+}

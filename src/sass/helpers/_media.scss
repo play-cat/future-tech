@@ -1,0 +1,108 @@
+@use 'sass:map';
+@use './functions' as *;
+
+// Mixin for media queries
+
+$laptop: 1440.98px;
+$tablet: 1023.98px;
+$mobile: 767.98px;
+$mobile-s: 480.98px;
+
+@mixin laptop-above {
+  @media screen and (width > $laptop) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (width <= $laptop) {
+    @content;
+  }
+}
+
+@mixin tablet-above {
+  @media screen and (width > $tablet) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (width <= $tablet) {
+    @content;
+  }
+}
+
+@mixin mobile-above {
+  @media screen and (width > $mobile) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (width <= $mobile) {
+    @content;
+  }
+}
+
+@mixin mobile-s-above {
+  @media screen and (width > $mobile-s) {
+    @content;
+  }
+}
+
+@mixin mobile-s {
+  @media screen and (width <= $mobile-s) {
+    @content;
+  }
+}
+
+// Міксін для надання різних стилів для пристроїв які підтримують hover
+// і для тих, які не підтримують (мобільні телефони, планшети без стилуса)
+// якщо при виклику передати параметр true
+// то hover стилі будуть примінятись тільки для приладів з сенсорним екраном
+
+@mixin hover($hasActiveEffectOnMobile: true) {
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+
+  @if ($hasActiveEffectOnMobile) {
+    @media (any-hover: none) {
+      &:active {
+        @content;
+      }
+    }
+  }
+}
+
+// інша реалізація міксіну для медіазапитів
+
+$breakpoints: (
+  'laptop': 1440.98px,
+  'tablet': 1023.98px,
+  'mobile': 767.98px,
+  'mobile-s': 480.98px,
+);
+
+// @media screen and (width <= $breakpoint){}
+// те саме що
+// @media screen and (max-width: $breakpoint){}
+
+@mixin respond($device) {
+  @if map.has-key($breakpoints, $device) {
+    $breakpoint: map.get($breakpoints, $device);
+    @media screen and (width <= $breakpoint) {
+      @content;
+    }
+  } @else if type-of($device) == 'number' {
+    @media screen and (width <= #{$device}px) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$device}.";
+  }
+}
+// example usage
+// @include respond(tablet) {padding: 80px 30px;}

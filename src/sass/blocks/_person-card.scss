@@ -1,0 +1,47 @@
+@use '../helpers' as *;
+
+.person-card {
+  display: flex;
+  align-items: center;
+  gap: fluid(16, 8);
+
+  &__img {
+    --img-size: 80px;
+
+    @include square(var(--img-size));
+
+    flex-shrink: 0;
+    background-color: var(--color-dark-15);
+    border-radius: 50%;
+    overflow: hidden;
+
+    @include laptop {
+      --img-size: 60px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+
+    @include laptop-above {
+      gap: 2px;
+    }
+  }
+
+  &__name {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-light);
+
+    @include laptop {
+      font-size: 18px;
+    }
+  }
+}

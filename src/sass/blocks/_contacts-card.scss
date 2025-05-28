@@ -1,0 +1,36 @@
+@use '../helpers' as *;
+
+.contacts-card {
+  display: grid;
+  row-gap: fluid(50, 20);
+
+  &__title {
+  }
+
+  &__body {
+    display: grid;
+    justify-items: start;
+    row-gap: 16px;
+
+    @include laptop {
+      row-gap: 10px;
+    }
+
+    @include mobile {
+      padding-inline-start: 50px;
+    }
+
+    &:has(.socia1s) {
+      justify-items: stretch;
+    }
+  }
+
+  &__link {
+  }
+
+  &__address {
+  }
+
+  &__socia1s {
+  }
+}

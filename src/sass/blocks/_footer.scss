@@ -1,0 +1,99 @@
+@use '../helpers' as *;
+
+.footer {
+  $this: &;
+
+  color: var(--color-dark-40);
+
+  &__inner {
+  }
+
+  &__body {
+    padding-block: fluid(80, 40);
+  }
+
+  &__extra {
+    @include flex-between;
+
+    gap: 20px;
+    padding-block: 40px;
+    border-top: var(--border);
+
+    @include laptop {
+      padding-block: 24px;
+    }
+
+    @include mobile {
+      flex-flow: column;
+    }
+
+    &-menu {
+      &-list {
+        display: flex;
+        align-items: center;
+      }
+
+      &-item:not(:last-child)::after {
+        content: '|';
+        margin-inline: 11px;
+      }
+    }
+  }
+
+  &__socia1s {
+    @include mobile {
+      order: -1;
+    }
+  }
+
+  &__menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(fluid(230, 169), 1fr));
+    align-items: start;
+    gap: fluid(80, 20);
+
+    @include laptop {
+      gap: fluid(50, 20);
+    }
+  }
+
+  &__menu-column {
+    display: grid;
+    row-gap: fluid(36, 16);
+
+    @include mobile {
+      &:last-child {
+        grid-column: span 2; // 1 / -1
+
+        #{$this}__menu-list {
+          flex-flow: row wrap;
+        }
+      }
+    }
+  }
+
+  &__menu-main-link {
+    font-weight: 500;
+    color: var(--color-light);
+    text-transform: capitalize;
+  }
+
+  &__menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: fluid(18, 8);
+  }
+
+  &__menu-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__menu-link {
+  }
+
+  &__menu-badge {
+  }
+}

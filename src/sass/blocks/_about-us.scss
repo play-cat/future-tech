@@ -1,0 +1,72 @@
+@use '../helpers' as *;
+
+.about-us {
+  padding-block: fluid(120, 40);
+  background-color: var(--color-dark-10);
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: fluid(100, 40);
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    grid-template-areas:
+      'icon subtitle subtitle'
+      'icon title title'
+      'icon description description';
+    align-items: center;
+    justify-content: start;
+    gap: 30px fluid(80, 20);
+
+    @include mobile {
+      grid-template-areas:
+        'icon subtitle subtitle'
+        'title title title'
+        'description description description';
+
+      row-gap: 20px;
+    }
+  }
+
+  &__icon {
+    @include square(#{fluid(150, 60)});
+
+    grid-area: icon;
+    color: var(--color-accent);
+  }
+
+  &__subtitle {
+    grid-area: subtitle;
+    justify-self: start;
+  }
+
+  &__title {
+    grid-area: title;
+  }
+
+  &__description {
+    grid-area: description;
+  }
+
+  &__list {
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+    background-color: var(--color-dark);
+    border: var(--border);
+    border-radius: 12px;
+
+    @include mobile-above {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include mobile {
+      padding: 10px;
+      gap: 10px;
+      border-radius: 10px;
+    }
+  }
+}

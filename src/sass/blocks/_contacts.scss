@@ -1,0 +1,10 @@
+@use '../helpers' as *;
+
+.contacts {
+  &__header {
+    border-block-end: var(--border);
+  }
+
+  &__body {
+  }
+}

@@ -1,0 +1,74 @@
+@use '../helpers' as *;
+
+.btn {
+  @include flex-center(true);
+
+  column-gap: 10px;
+  padding: 18px 24px;
+  border: var(--border);
+  border-radius: 12px;
+  color: var(--color-gray-60);
+  background: var(--color-dark);
+  text-transform: capitalize;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-duration) ease;
+
+  &:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    background-color: var(--color-dark-10);
+  }
+
+  @include laptop {
+    padding: 14px 20px;
+    font-size: 14px;
+    border-radius: 8px;
+    column-gap: 4px;
+  }
+
+  &--accent {
+    padding: 14px 20px;
+    font-weight: 500;
+    border-radius: 10px;
+    background: var(--color-accent);
+    color: var(--color-dark);
+
+    @include hover {
+      background: var(--color-dark);
+    }
+
+    @include laptop {
+      padding: 10px 14px;
+      border-radius: 6px;
+    }
+  }
+
+  &--footer-menu-link {
+    padding: 10px 16px;
+
+    @include laptop {
+      padding: 8px 14px;
+      border-radius: 6px;
+    }
+  }
+
+  &--resources-preview {
+  }
+
+  &--dark-gray {
+    border-color: var(--color-dark-15);
+  }
+
+  &--dark-10 {
+    background-color: var(--color-dark-10);
+  }
+
+  &--read-full-blog {
+    @include hover {
+      .icon::after {
+        background-color: var(--color-accent);
+      }
+    }
+  }
+}

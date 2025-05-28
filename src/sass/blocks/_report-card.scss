@@ -1,0 +1,62 @@
+@use '../helpers' as *;
+
+.report-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: fluid(30, 20);
+
+  &__img {
+    width: 100%;
+    height: fluid(290, 223);
+    border-radius: 12px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    @include laptop {
+      gap: 10px;
+    }
+  }
+
+  &__title {
+  }
+
+  &__description {
+  }
+
+  &__actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 20px;
+
+    @include laptop {
+      column-gap: 10px;
+    }
+
+    @include tablet {
+      grid-template-columns: 1fr;
+
+      row-gap: 10px;
+    }
+  }
+
+  &__details-link {
+  }
+
+  &__download-link {
+  }
+}

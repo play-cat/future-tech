@@ -1,0 +1,56 @@
+@use '../helpers' as *;
+
+.download-info {
+  display: inline-grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 50px;
+  color: var(--color-gray-60);
+
+  @include laptop {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr auto;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    @include laptop {
+      gap: 2px;
+    }
+  }
+
+  &__team {
+    --person-img-size: 50px;
+
+    @include laptop {
+      --person-img-size: 40px;
+    }
+
+    .team__list {
+      background-color: var(--color-dark);
+      border-radius: 12px;
+    }
+  }
+
+  // .download-info__title
+
+  &__title {
+  }
+
+  // .download-info__subtitle
+
+  &__subtitle {
+  }
+
+  // .download-info__team
+
+  &__team {
+  }
+}

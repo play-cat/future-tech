@@ -1,0 +1,40 @@
+{{#each videosCards}}
+  <li class='bordered-grid__item'>
+    <div class='video-card'>
+      <div class='video-card__thumbnail video-player' data-js-video-player>
+        <video
+          src='/sample-video.mp4'
+          class='video-player__video'
+          width='718'
+          height='412'
+          loop
+          poster='/src/assets/img/videos/{{poster}}'
+          data-js-video-player-video
+        ></video>
+        <div
+          class='video-player__controls is-active'
+          data-js-video-player-controls
+        >
+          <button
+            class='video-player__play-btn'
+            type='button'
+            title='Play'
+            aria-label='Play'
+            data-js-video-player-play-btn
+          >
+            <svg class='sprite-icon' aria-hidden='true'>
+              <use xlink:href='src/assets/icons/sprite.svg#play-icon'></use>
+            </svg>
+          </button>
+          <div class='video-player__duration'>2.30 min</div>
+        </div>
+      </div>
+      <div class='video-card__body'>
+        <h3 class='video-card__title h5'>{{title}}</h3>
+        <div class='video-card__description'>
+          <p>{{description}}</p>
+        </div>
+      </div>
+    </div>
+  </li>
+{{/each}}

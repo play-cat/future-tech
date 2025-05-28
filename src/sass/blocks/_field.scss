@@ -1,0 +1,72 @@
+@use '../helpers' as *;
+
+.field {
+  display: grid;
+  align-items: start;
+  gap: 16px;
+  color: var(--color-light);
+
+  @include laptop {
+    gap: 12px;
+    font-size: 16px;
+  }
+
+  &__label {
+    font-size: 18px;
+    font-weight: 500;
+
+    @include laptop {
+      font-size: 16px;
+    }
+  }
+
+  &__reguired-star {
+    color: var(--color-red);
+  }
+
+  &__control {
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    border: var(--border);
+    color: var(--color-light);
+    background-color: var(--color-dark-10);
+    box-shadow: var(--shadow);
+
+    @include hover {
+      border-color: var(--color-accent);
+    }
+
+    @include laptop {
+      padding: 16px;
+      border-radius: 6px;
+    }
+
+    &::placeholder {
+      color: var(--color-dark-40);
+    }
+
+    &:user-invalid {
+      border-color: var(--color-red);
+    }
+  }
+
+  &__body {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+
+    @include laptop {
+      gap: 12px;
+    }
+  }
+
+  textarea.field__control {
+    resize: vertical;
+    min-height: 160px;
+
+    @include mobile {
+      min-height: 130px;
+    }
+  }
+}

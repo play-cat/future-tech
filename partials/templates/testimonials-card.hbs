@@ -1,0 +1,40 @@
+{{#each testimonialsCards}}
+  <li class='bordered-grid__item'>
+    <div class='testimonial-card'>
+      <div class='testimonial-card__author person-card'>
+        <div class='person-card__img'>
+          <img
+            src='/src/assets/img/testimonials/{{img}}'
+            alt='{{name}}'
+            width='60'
+            height='60'
+            loading='lazy'
+          />
+        </div>
+        <div class='person-card__body'>
+          <p class='person-card__name'>{{name}}</p>
+          <p class='person-card__role'>{{place}}</p>
+        </div>
+      </div>
+      <div class='testimonial-card__body tile'>
+        <div
+          class='testimonial-card__rating-view rating-view'
+          aria-label='Rating {{rating}} stars'
+          title='Rating {{rating}} stars'
+        >
+          {{! filled stars  }}
+          {{#forLoop rating}}
+            <span class='rating-view__star icon icon--star is-active'></span>
+          {{/forLoop}}
+          {{! empty stars (5 - starsCount) }}
+          {{#forLoop (subtract 5 rating)}}
+            <span class='rating-view__star icon icon--star'></span>
+          {{/forLoop}}
+        </div>
+        <blockquote class='testimonial-card__description'>
+          <p>{{testimonial}}</p>
+        </blockquote>
+      </div>
+    </div>
+  </li>
+{{/each}}

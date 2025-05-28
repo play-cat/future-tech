@@ -1,0 +1,138 @@
+@use '../helpers' as *;
+
+.select {
+  &__label {
+  }
+
+  &__original-control {
+    min-width: 100px;
+    @include mobile-above {
+      @include visually-hidden;
+    }
+  }
+
+  &__body {
+    position: relative;
+
+    @include mobile {
+      @include visually-hidden;
+    }
+  }
+
+  &__button {
+    @include flex-between;
+
+    position: relative;
+    gap: 10px;
+    transition-duration: var(--transition-duration);
+
+    @include laptop {
+      gap: 6px;
+    }
+
+    &.is-expanded {
+      &::after {
+        transform: rotate(45deg) translateY(30%);
+      }
+    }
+
+    &::after {
+      --size: 12px;
+      @include square(var(--size));
+
+      content: '';
+      right: 0;
+      background-color: var(--color-dark-10);
+      box-shadow: inset 3px 3px 0px 0px var(--color-light);
+      transform: rotate(225deg) translateY(30%);
+      transition-duration: var(--transition-duration);
+
+      @include laptop {
+        --size: 10px;
+      }
+    }
+  }
+
+  &__button,
+  &__option {
+    user-select: none;
+    cursor: pointer;
+
+    * {
+      pointer-events: none;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    min-width: 150px;
+    max-width: 290px;
+    max-height: 250px;
+    top: calc(100% + 4px);
+    overflow-y: auto;
+    display: grid;
+    border: var(--border);
+    border-radius: 8px;
+    background-color: var(--color-dark-10);
+    transition-duration: var(--transition-duration);
+
+    @include laptop {
+      border-radius: 6px;
+    }
+
+    &.is-on-the-left-side {
+      left: 0;
+      transform-origin: 0 0;
+    }
+
+    &.is-on-the-right-side {
+      right: 0;
+      transform-origin: 100% 0;
+    }
+
+    &:not(.is-expanded) {
+      @include hide;
+
+      scale: 0;
+    }
+  }
+
+  &__option {
+    position: relative;
+    padding: 10px 20px;
+
+    @include laptop {
+      padding: 8px 16px;
+    }
+
+    &:not(:last-child) {
+      border-block-end: var(--border);
+    }
+
+    @include hover {
+      color: var(--color-accent);
+      background-color: var(--color-dark);
+    }
+
+    &.is-selected {
+      color: var(--color-accent);
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 16px;
+        width: 8px;
+        height: 12px;
+        bottom: 40%;
+        display: inline-block;
+        box-shadow: inset 2px 2px 0 0px var(--color-light);
+        transform: rotate(-135deg);
+        transition-duration: var(--transition-duration);
+      }
+    }
+
+    &.is-current {
+      background-color: var(--color-dark);
+    }
+  }
+}

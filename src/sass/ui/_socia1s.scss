@@ -1,0 +1,62 @@
+@use '../helpers' as *;
+
+.socia1s {
+  $this: &;
+
+  &--tiles {
+    #{$this}__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 20px;
+
+      @include laptop {
+        gap: 10px;
+      }
+    }
+    #{$this}__item {
+      padding: 20px 30px;
+      border-radius: 6px;
+
+      @include hover {
+        border-color: var(--color-accent);
+
+        #{$this}__link {
+          color: var(--color-accent);
+        }
+      }
+
+      @include laptop {
+        padding-block: 16px;
+      }
+    }
+  }
+
+  &__list {
+    @include flex-between;
+    gap: 20px;
+
+    @include laptop {
+      gap: 14px;
+    }
+  }
+
+  &__item {
+    @include flex-center;
+  }
+
+  &__link {
+    --size: 24px;
+    @include square(var(--size));
+
+    color: var(--color-light);
+    transition: color var(--transition-duration) ease;
+
+    @include hover {
+      color: var(--color-accent);
+    }
+
+    @include mobile {
+      --size: 20px;
+    }
+  }
+}

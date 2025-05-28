@@ -1,0 +1,19 @@
+@use '../helpers' as *;
+
+.about-us-card {
+  display: grid;
+  gap: fluid(20, 10);
+
+  &__title {
+    @include fluid-text(22, 16);
+
+    font-family: var(--font-family-base);
+    font-weight: 600;
+
+    @include rounded-icon;
+  }
+
+  &__description {
+    color: var(--color-gray-60);
+  }
+}

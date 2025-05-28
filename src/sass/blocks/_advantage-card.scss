@@ -1,0 +1,21 @@
+@use '../helpers' as *;
+
+.advantage-card {
+  display: grid;
+  row-gap: fluid(30, 16);
+
+  img {
+    @include square(fluid(50, 30));
+  }
+
+  &__link {
+    @include rounded-icon;
+  }
+
+  &__details {
+    @include fluid-text(20, 14);
+
+    font-family: var(--font-family-accent);
+    color: var(--color-gray-60);
+  }
+}

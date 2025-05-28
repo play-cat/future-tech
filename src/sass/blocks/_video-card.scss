@@ -1,0 +1,30 @@
+@use '../helpers' as *;
+
+.video-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @include laptop {
+    gap: 20px;
+  }
+
+  &__thumbnail {
+  }
+
+  &__body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: fluid(10, 4);
+  }
+
+  &__title {
+    font-family: var(--font-family-base);
+  }
+
+  &__description {
+  }
+}

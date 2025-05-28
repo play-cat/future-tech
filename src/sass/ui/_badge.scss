@@ -1,0 +1,20 @@
+@use '../helpers' as *;
+
+.badge {
+  @include flex-center(true);
+  @include fluid-text(16, 14);
+
+  padding: fluid(4, 2) fluid(12, 10);
+  border-radius: 6px;
+  border: 1px solid transparent;
+  color: var(--color-light);
+  text-transform: capitalize;
+  background-image: linear-gradient(var(--color-dark-10), var(--color-dark-10)),
+    var(--gradient);
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+
+  @include laptop {
+    border-radius: 4px;
+  }
+}

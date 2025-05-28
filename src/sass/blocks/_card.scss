@@ -1,0 +1,216 @@
+@use '../helpers' as *;
+
+.card {
+  color: var(--color-gray-60);
+
+  @include mobile-above {
+    display: grid;
+    grid-template-columns: 37.5% auto;
+  }
+
+  &__preview {
+    padding-inline-end: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: fluid(60, 20);
+
+    @include laptop {
+      padding-inline-end: 60px;
+    }
+
+    @include tablet {
+      padding-inline-end: 16px;
+    }
+
+    @include mobile-above {
+      border-inline-end: var(--border);
+    }
+
+    @include mobile {
+      padding-inline: 0;
+      padding-block: 50px;
+      border-block-end: var(--border);
+    }
+  }
+
+  &__preview-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: fluid(50, 20);
+
+    @include mobile {
+      align-items: flex-start;
+    }
+
+    @include mobile-s {
+      align-items: stretch;
+    }
+
+    &:has(.card__rating-view) {
+      align-items: stretch;
+    }
+  }
+
+  &__preview-icon {
+    @include square(fluid(80, 50));
+  }
+
+  &__preview-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: fluid(16, 6);
+
+    &:has(.card__rating-view) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  &__body {
+    padding: 80px 0 80px 80px;
+
+    @include laptop {
+      padding: 60px 0 60px 60px;
+    }
+
+    @include tablet {
+      padding: 30px 0 30px 16px;
+    }
+
+    @include mobile {
+      padding: 30px 0;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: fluid(30, 10);
+
+    &--2-cols {
+      grid-template-columns: repeat(2, 1fr);
+
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &--2-cols-alt {
+      gap: 30px 20px;
+
+      @include laptop {
+        gap: 24px 16px;
+      }
+
+      @include mobile {
+        gap: 16px;
+      }
+
+      @include mobile-above {
+        grid-template-columns: auto 1fr;
+      }
+    }
+
+    &--3-cols {
+      gap: fluid(50, 20) 20px;
+
+      @include laptop {
+        column-gap: 16px;
+      }
+
+      @include mobile-above {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    &--3-cols-alt {
+      grid-template-columns: repeat(3, 1fr);
+      gap: fluid(50, 20) 20px;
+
+      @include laptop {
+        column-gap: 16px;
+      }
+
+      @include mobile-s {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  &__cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: fluid(20, 6);
+
+    &:has(> *:only-child) {
+      justify-content: center;
+    }
+
+    &:has(&-link) {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-areas: 'any link' 'any link';
+      align-items: center;
+      gap: 14px 30px;
+
+      @include laptop {
+        gap: 10px 20px;
+      }
+    }
+
+    &.tile {
+      padding: fluid(30, 20);
+    }
+
+    &:not(.tile) {
+      @include mobile-s {
+        grid-template: initial;
+
+        & .card__cell-link {
+          margin-block-start: 16px;
+          grid-area: initial;
+        }
+      }
+    }
+
+    &-subtitle {
+      font: inherit;
+      color: inherit;
+    }
+
+    &-description {
+      @include mobile-s {
+        font-size: 14px;
+      }
+    }
+
+    &-link {
+      grid-area: link;
+    }
+
+    &-img {
+      width: 100%;
+      height: fluid(332, 169);
+      object-fit: cover;
+      border-radius: 12px;
+
+      @include laptop {
+        border-radius: 10px;
+      }
+    }
+
+    &--full-width {
+      grid-column: 1 / -1;
+    }
+
+    &--full-width-on-mobile-s {
+      @include mobile-s {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+}

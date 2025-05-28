@@ -1,0 +1,82 @@
+@use '../helpers' as *;
+
+.metrics {
+  $this: &;
+  --columns: 3;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(fluid(247, 98), 1fr));
+  }
+
+  &__item {
+    padding: fluid(50, 20);
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    gap: 10px;
+
+    &:first-child {
+      padding-inline-start: 0;
+    }
+
+    &:not(:last-child) {
+      border-right: var(--border);
+    }
+
+    @include laptop {
+      gap: 2px;
+    }
+
+    @include tablet {
+      gap: 0;
+    }
+  }
+
+  &__value {
+    font-weight: 600;
+
+    &::after {
+      content: '+';
+      color: var(--color-accent);
+    }
+  }
+
+  &--alt {
+    --columns: 4;
+
+    text-align: center;
+
+    & #{$this}__list {
+      grid-template-columns: repeat(var(--columns), 1fr);
+    }
+
+    & #{$this}__item {
+      &:nth-child(4n) {
+        padding-inline-end: 0;
+      }
+    }
+
+    @include mobile {
+      --columns: 2;
+
+      & #{$this}__list {
+        padding-inline: 0;
+      }
+
+      & #{$this}__item {
+        border-block-end: var(--border);
+        // padding: fluid(50, 20);
+
+        &:nth-child(even) {
+          padding-inline-end: var(--container-padding-x);
+          // border-inline-end: none;
+        }
+
+        &:nth-child(odd) {
+          padding-inline-start: var(--container-padding-x);
+        }
+      }
+    }
+  }
+}

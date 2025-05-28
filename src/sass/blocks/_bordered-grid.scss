@@ -1,0 +1,170 @@
+@use '../helpers' as *;
+
+.bordered-grid {
+  $this: &;
+  --columns: 1;
+  --item-padding-y: #{fluid(80, 40)};
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  &__item {
+    padding-block: var(--item-padding-y);
+
+    @include mobile {
+      &:not(:last-child) {
+        border-block-end: var(--border);
+      }
+    }
+  }
+
+  &--2-cols {
+    --columns: 2;
+    --item-padding-x: 80px;
+
+    @include laptop {
+      --item-padding-x: 50px;
+    }
+
+    @include mobile-above {
+      #{$this}__item {
+        &:nth-child(odd) {
+          padding-inline-end: var(--item-padding-x);
+          border-inline-end: var(--border);
+        }
+
+        &:nth-child(even) {
+          padding-inline-start: var(--item-padding-x);
+          &:not(:last-child) {
+            @include full-vw-centered-line(bottom, auto, 100%, 50%);
+          }
+        }
+      }
+    }
+  }
+
+  &--3-cols {
+    --columns: 3;
+    --item-padding-x: 50px;
+
+    column-gap: calc(var(--item-padding-x) * 2);
+
+    @include laptop {
+      --item-padding-x: 40px;
+    }
+
+    @include tablet {
+      --item-padding-x: 16px;
+    }
+
+    @include mobile-above {
+      #{$this}__item {
+        // select cols 1 and 2
+        &:nth-child(3n - 2),
+        &:nth-child(3n - 1) {
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 1px;
+            left: calc(100% + var(--item-padding-x));
+            top: 0;
+            background-color: var(--color-dark-15);
+          }
+        }
+        // select cols 2 and 3
+        &:nth-child(3n),
+        &:nth-child(3n - 1) {
+        }
+
+        // select col 2
+        &:nth-child(3n - 1) {
+          @include full-vw-centered-line(bottom);
+        }
+      }
+    }
+  }
+
+  &--4-cols {
+    --columns: 4;
+    --item-padding-x: 50px;
+
+    column-gap: calc(var(--item-padding-x) * 2);
+
+    #{$this}__item {
+      position: relative;
+      &:not(:last-child) {
+        &::after {
+          content: '';
+          position: absolute;
+          height: 100%;
+          width: 1px;
+          left: calc(100% + var(--item-padding-x));
+          top: 0;
+          background-color: var(--color-dark-15);
+        }
+      }
+    }
+
+    @include laptop {
+      --columns: 2;
+      --item-padding-x: 40px;
+
+      #{$this}__item {
+        position: relative;
+
+        &:nth-child(1),
+        &:nth-child(2) {
+          border-block-end: var(--border);
+        }
+
+        &:not(:last-child)::after {
+          content: none;
+        }
+
+        &:nth-child(odd) {
+          &::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 1px;
+            left: calc(100% + var(--item-padding-x));
+            top: 0;
+            background-color: var(--color-dark-15);
+          }
+        }
+      }
+    }
+
+    @include tablet {
+      --item-padding-x: 16px;
+    }
+
+    @include mobile {
+      #{$this}__item {
+        position: relative;
+
+        &:not(:last-child)::after {
+          content: none;
+        }
+
+        &:nth-child(odd) {
+          &::after {
+            content: none;
+          }
+        }
+      }
+    }
+  }
+
+  &--2-cols,
+  &--3-cols,
+  &--4-cols {
+    @include mobile {
+      --item-padding-x: 0;
+      --columns: 1;
+    }
+  }
+}

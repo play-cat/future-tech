@@ -1,0 +1,85 @@
+@use '../helpers' as *;
+
+.video-player {
+  position: relative;
+
+  &__video {
+    width: 100%;
+    height: fluid(412, 210);
+    object-fit: cover;
+    border-radius: 12px;
+
+    @include laptop {
+      border-radius: 10px;
+    }
+
+    &--small {
+      height: fluid(290, 210);
+    }
+  }
+
+  &__controls {
+    position: absolute;
+    inset: 0;
+    bottom: -1px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+
+    &:not(.is-active) {
+      @include hide;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(
+        180deg,
+        rgba(20, 20, 20, 0) 0%,
+        var(--color-dark) 100%
+      );
+    }
+
+    * {
+      position: relative;
+    }
+
+    &--center {
+      @include flex-center;
+    }
+  }
+
+  &__play-btn {
+    --size: 60px;
+
+    @include square(var(--size));
+    @include flex-center;
+
+    padding: 0;
+    margin: 0;
+    border: none;
+    color: var(--color-light);
+    background-color: transparent;
+    cursor: pointer;
+
+    @include hover {
+      color: var(--color-accent);
+    }
+
+    @include laptop {
+      --size: 40px;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__duration {
+    color: var(--color-gray-50);
+  }
+}

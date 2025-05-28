@@ -1,0 +1,86 @@
+@use '../helpers' as *;
+
+.tabs {
+  $this: &;
+
+  &__header {
+    border-block-end: var(--border);
+
+    @include tablet {
+      overflow-x: auto;
+    }
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 20px;
+    padding-block: fluid(50, 20);
+
+    @include laptop {
+      column-gap: 14px;
+    }
+
+    @include tablet {
+      width: max-content;
+    }
+
+    &--compact {
+      padding: 10px;
+      display: inline-flex;
+      column-gap: 10px;
+      border-radius: 10px;
+      border: var(--border);
+      background-color: var(--color-dark);
+
+      & #{$this}__btn {
+        padding: 18px fluid(38, 13);
+
+        @include laptop {
+          padding-block: 14px;
+        }
+
+        &.is-active {
+          background-color: var(--color-dark-15);
+        }
+      }
+    }
+  }
+
+  &__btn {
+    padding: fluid(30, 18) 11px;
+    color: var(--color-gray-60);
+    background-color: transparent;
+    border: var(--border);
+    border-radius: 8px;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: all var(--transition-duration) ease;
+
+    @include laptop {
+      font-size: 14px;
+    }
+
+    @include hover {
+      color: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+
+    &.is-active {
+      font-weight: 500;
+      color: var(--color-light);
+      background-color: var(--color-dark-10);
+      pointer-events: none;
+    }
+  }
+
+  &__content {
+    &:not(.is-active) {
+      display: none;
+    }
+
+    &:focus-visible {
+      outline-offset: -16px;
+    }
+  }
+}

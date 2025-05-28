@@ -1,0 +1,23 @@
+<ul class='hero__advantages-list container'>
+  {{#each advantageCards}}
+    <li class='hero__advantages-item'>
+      <div class='advantage-card'>
+        <img
+          width='50'
+          height='50'
+          src='/src/assets/img/advantages/{{img}}'
+          alt=''
+          class='advantage-card__img'
+          loading='lazy'
+        />
+        <a href='#' class='advantage-card__link'>
+          <h3 class='advantage-card__title h6'>{{title}}</h3>
+          <p class='advantage-card__subtitle'>
+            {{subtitle}}
+          </p>
+        </a>
+        <p class='advantage-card__details'>{{details}}</p>
+      </div>
+    </li>
+  {{/each}}
+</ul>

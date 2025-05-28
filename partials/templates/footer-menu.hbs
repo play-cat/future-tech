@@ -1,0 +1,23 @@
+<div class='footer__menu'>
+  {{#each footerMenu}}
+    <div class='footer__menu-column'>
+      <a
+        href='{{this.main-link.href}}'
+        class='footer__menu-main-link h6'
+      >{{this.main-link.name}}</a>
+      <ul class='footer__menu-list'>
+        {{#each this.links}}
+          <li class='footer__menu-item'>
+            <a href='{{this.href}}' class='footer__menu-link {{linkStyle}}'>
+              {{this.name}}
+              {{#if this.iconStyle}}<span class='{{iconStyle}}'></span>{{/if}}
+            </a>
+            {{#if this.badge}}<span
+                class='footer__menu-badge badge'
+              >{{this.badge}}</span>{{/if}}
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/each}}
+</div>

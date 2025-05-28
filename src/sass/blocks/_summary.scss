@@ -1,0 +1,47 @@
+@use '../helpers' as *;
+
+.summary {
+  &--two-cols {
+    .summary {
+      &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 20px;
+
+        @include laptop {
+          row-gap: 20px;
+        }
+      }
+
+      &__item {
+        &--full-width {
+          grid-column: 1 / -1;
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: fluid(50, 20);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    @include laptop {
+      gap: 2px;
+    }
+  }
+
+  &__title {
+  }
+
+  &__value {
+    color: var(--color-light);
+  }
+}

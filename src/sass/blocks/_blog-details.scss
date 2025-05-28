@@ -1,0 +1,167 @@
+@use '../helpers' as *;
+
+.blog-details {
+  &__banner {
+    position: relative;
+    height: fluid(600, 280);
+    padding-block-end: fluid(65, 16);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(
+        180deg,
+        rgba(20, 20, 20, 0) 0%,
+        rgba(20, 20, 20, 0.8) 70%,
+        var(--color-dark) 100%
+      );
+    }
+  }
+
+  &__banner-inner {
+    z-index: 1;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  &__title {
+    @include fluid-text(64, 28);
+
+    font-weight: 600;
+  }
+
+  &__body {
+    border-block: var(--border);
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      padding-block-end: 1em;
+
+      &:not(:first-child) {
+        padding-block-start: 0.5em;
+      }
+    }
+  }
+
+  &__body-inner {
+    display: grid;
+    grid-template-columns: 1fr 32.5%;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__content {
+    border-inline-end: var(--border);
+
+    @include tablet {
+      border-inline-end: none;
+    }
+  }
+
+  &__intro,
+  &__main {
+    padding-inline-end: 80px;
+    padding-block: fluid(80, 40);
+
+    @include laptop {
+      padding-inline-end: 60px;
+    }
+
+    @include tablet {
+      padding-inline: 8px;
+    }
+  }
+
+  &__intro,
+  &__actions {
+    @include tablet-above {
+      border-block-end: var(--border);
+    }
+  }
+
+  &__intro,
+  &__actions,
+  &__summary {
+    @include tablet {
+      @include full-vw-centered-line(bottom);
+    }
+  }
+
+  &__intro {
+  }
+
+  &__main {
+    --initial-max-heigth: 740px;
+
+    @include laptop {
+      --initial-max-heigth: 690px;
+    }
+
+    @include mobile {
+      --initial-max-heigth: 660px;
+    }
+  }
+
+  &__read-full-blog-btn {
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  &__actions,
+  &__summary {
+    padding-inline-start: 80px;
+
+    @include laptop {
+      padding-inline-start: 60px;
+    }
+
+    @include tablet {
+      padding-inline: 8px;
+    }
+  }
+
+  &__actions {
+    padding-block: fluid(50, 20);
+
+    & .blog-actions__list {
+      @include tablet {
+        justify-content: center;
+      }
+    }
+  }
+
+  &__summary {
+    padding-block: fluid(80, 40);
+
+    .summary__item--full-width {
+      margin-block-start: 20px;
+      gap: 14px;
+    }
+  }
+
+  &__news {
+  }
+}

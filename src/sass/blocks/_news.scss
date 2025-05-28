@@ -1,0 +1,28 @@
+@use '../helpers' as *;
+
+.news {
+  padding-block: fluid(80, 40);
+
+  display: grid;
+  row-gap: 60px;
+
+  @include laptop {
+    row-gap: 40px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(358px, 1fr));
+    gap: 30px;
+  }
+
+  &__item {
+  }
+}

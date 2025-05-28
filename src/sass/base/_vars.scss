@@ -1,0 +1,49 @@
+:root {
+  /* Typography */
+  --font-family-base: 'Inter', sans-serif;
+  --font-family-accent: 'Kumbh Sans', sans-serif;
+
+  /* Layout */
+  --container-width: 1600px;
+  --container-padding-x: 16px;
+  --section-margin-top: 60px;
+
+  /* Colors */
+  --color-light: #fff;
+  --color-dark: #141414;
+  --color-dark-10: #1a1a1a;
+  --color-dark-15: #262626;
+  --color-dark-20: #333333;
+  --color-dark-40: #404040;
+  --color-gray-50: #7e7e81;
+  --color-gray-60: #98989a;
+  --color-accent: #ffd11a;
+  --color-red: #ff5500;
+
+  // Others
+  --border: 1px solid var(--color-dark-15);
+  --gradient: linear-gradient(
+    40deg,
+    var(--color-dark-15) 60%,
+    var(--color-accent) 150%
+  );
+  --shadow: 0 0 0 4px #191919;
+  --transition-duration: 0.3s;
+  --100vw: calc(100vw - var(--scrollbar-width));
+}
+
+/* Breakpoints */
+@media (width <= 1440px) {
+  :root {
+    --container-width: 1280px;
+  }
+}
+
+@media (width <= 1023px) {
+}
+
+@media (width <= 767px) {
+}
+
+@media (width <= 480px) {
+}

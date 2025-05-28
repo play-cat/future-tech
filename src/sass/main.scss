@@ -1,0 +1,64 @@
+// normalize and reset
+@use '@a1rth/css-normalize';
+// @use '/src/sass/libs/modern-normalize.min.css';
+// @use '/src/sass/base/reset';
+
+// base
+@use '/src/sass/libs/fonts';
+@use '/src/sass/base/vars';
+@use '/src/sass/base/base';
+@use '/src/sass/base/utilities';
+
+// ui
+@use '/src/sass/ui/titles';
+@use '/src/sass/ui/buttons';
+@use '/src/sass/ui/icon';
+@use '/src/sass/ui/badge';
+@use '/src/sass/ui/socia1s';
+
+// blocks
+@use '/src/sass/blocks/header';
+@use '/src/sass/blocks/logo';
+@use '/src/sass/blocks/burger-btn';
+@use '/src/sass/blocks/menu';
+@use '/src/sass/blocks/footer';
+@use '/src/sass/blocks/modal';
+@use '/src/sass/blocks/hero';
+@use '/src/sass/blocks/metrics';
+@use '/src/sass/blocks/resources-preview';
+@use '/src/sass/blocks/advantage-card';
+@use '/src/sass/blocks/team';
+@use '/src/sass/blocks/tag';
+@use '/src/sass/blocks/section';
+@use '/src/sass/blocks/list';
+@use '/src/sass/blocks/tile';
+@use '/src/sass/blocks/card';
+@use '/src/sass/blocks/tabs';
+@use '/src/sass/blocks/person-card';
+@use '/src/sass/blocks/blog-actions';
+@use '/src/sass/blocks/blog-card';
+@use '/src/sass/blocks/download-info';
+@use '/src/sass/blocks/bordered-grid';
+@use '/src/sass/blocks/rating-view';
+@use '/src/sass/blocks/testimonial-card';
+@use '/src/sass/blocks/about-us-card';
+@use '/src/sass/blocks/about-us';
+@use '/src/sass/blocks/hero-alt';
+@use '/src/sass/blocks/summary';
+@use '/src/sass/blocks/news';
+@use '/src/sass/blocks/news-card';
+@use '/src/sass/blocks/video-card';
+@use '/src/sass/blocks/video-player';
+@use '/src/sass/blocks/expandable-content';
+@use '/src/sass/blocks/blog-details';
+@use '/src/sass/blocks/table-of-contents';
+@use '/src/sass/blocks/podcasts-hero';
+@use '/src/sass/blocks/report-card';
+@use '/src/sass/blocks/contacts';
+@use '/src/sass/blocks/contacts-card';
+@use '/src/sass/blocks/feedback-form';
+@use '/src/sass/blocks/field';
+@use '/src/sass/blocks/accordion-group';
+@use '/src/sass/blocks/accordion';
+@use '/src/sass/blocks/checkbox';
+@use '/src/sass/blocks/select';

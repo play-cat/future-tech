@@ -1,0 +1,34 @@
+@use '../helpers' as *;
+
+.table-of-contents {
+  padding: 20px;
+
+  @include laptop {
+    padding: 18px;
+  }
+
+  &__title {
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include laptop {
+      margin-inline-start: 16px;
+      gap: 16px;
+    }
+  }
+
+  &__item {
+    list-style-type: disc;
+    margin-inline-start: 24px;
+    @include laptop {
+      margin-inline-start: 20px;
+    }
+  }
+
+  &__link {
+  }
+}

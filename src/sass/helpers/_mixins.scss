@@ -1,0 +1,163 @@
+@use 'sass:math';
+@use './functions' as *;
+@use '/src/sass/helpers/media' as *;
+
+@mixin fluid-text($max: 48, $min: 16) {
+  font-size: fluid($max, $min);
+}
+
+@mixin hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+@mixin show {
+  visibility: visible;
+  opacity: 1;
+}
+
+@mixin flex-center($isInline: false) {
+  @if $isInline {
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
+
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between($isInline: false) {
+  @if $isInline {
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin abs-x {
+  position: absolute;
+  left: 50%;
+  translate: -50% 0;
+}
+
+@mixin abs-y {
+  position: absolute;
+  top: 50%;
+  translate: -0 -50%;
+}
+
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+@mixin full-vw-centered-line(
+  $posititon: top,
+  $left: 50%,
+  $right: auto,
+  $translate: -50%
+) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: $left;
+    right: $right;
+    translate: $translate;
+    #{$posititon}: 0;
+    width: var(--100vw);
+    height: 1px;
+    background-color: var(--color-dark-15);
+  }
+}
+
+@mixin rounded-icon {
+  --circle-size: #{fluid(52, 40)};
+  --circle-margin-left: #{fluid(20, 14)};
+
+  min-height: var(--circle-size);
+  position: relative;
+  display: grid;
+  gap: fluid(4, 2);
+  align-items: center;
+  padding-inline-end: calc(var(--circle-margin-left) + var(--circle-size));
+
+  &::after {
+    @include square(var(--circle-size));
+    @include abs-y;
+
+    content: '';
+    right: 0;
+    border-radius: 50%;
+    border: 1px solid var(--color-accent);
+    background-color: var(--color-accent);
+    transition: background-color 0.3s ease;
+
+    @include tablet {
+      top: 0;
+      translate: 0;
+    }
+
+    @include mobile {
+      @include abs-y;
+    }
+  }
+
+  &::before {
+    @include square(var(--circle-size));
+    @include abs-y;
+
+    content: '';
+    right: 0;
+    border-radius: 50%;
+    background-color: var(--color-dark);
+    mask-image: url('/src/assets/icons/svg/arrow-top-right.svg');
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 20px 20px;
+    transition: background-color 0.3s ease;
+    z-index: 1;
+
+    @include tablet {
+      top: 0;
+      translate: 0;
+    }
+
+    @include mobile {
+      @include abs-y;
+    }
+  }
+
+  &:hover::after {
+    background-color: var(--color-dark);
+  }
+
+  &:hover::before {
+    background-color: var(--color-accent);
+  }
+}

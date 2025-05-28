@@ -1,0 +1,209 @@
+{
+  "home": {
+    "main-link": { "name": "home", "href": "/" },
+    "links": [
+      {
+        "name": "Features",
+        "href": "#",
+        "iconStyle": "",
+        "badge": "",
+        "linkStyle": ""
+      },
+      {
+        "name": "Blogs",
+        "href": "#",
+        "iconStyle": "",
+        "badge": "",
+        "linkStyle": ""
+      },
+      {
+        "name": "Resources",
+        "href": "#",
+        "iconStyle": "",
+        "badge": "new",
+        "linkStyle": ""
+      },
+      {
+        "name": "Testimonials",
+        "href": "#",
+        "iconStyle": "",
+        "badge": "",
+        "linkStyle": ""
+      },
+      {
+        "name": "Contact Us",
+        "href": "#",
+        "iconStyle": "",
+        "badge": "",
+        "linkStyle": ""
+      },
+      {
+        "name": "Newsletter",
+        "href": "#",
+        "iconStyle": "",
+        "badge": "",
+        "linkStyle": ""
+      }
+    ]
+  },
+  "news": {
+    "main-link": { "name": "news", "href": "./news.html" },
+    "links": [
+      {
+        "name": "Trending Stories",
+        "href": "#",
+        "iconStyle": "",
+        "badge": "",
+        "linkStyle": ""
+      },
+      {
+        "name": "Featured Videos",
+        "href": "#",
+        "iconStyle": "",
+        "badge": "",
+        "linkStyle": ""
+      },
+      {
+        "name": "Technology",
+        "href": "#",
+        "iconStyle": "",
+        "badge": "",
+        "linkStyle": ""
+      },
+      {
+        "name": "Health",
+        "href": "#",
+        "iconStyle": "",
+        "badge": "",
+        "linkStyle": ""
+      },
+      {
+        "name": "Politics",
+        "href": "#",
+        "iconStyle": "",
+        "badge": "",
+        "linkStyle": ""
+      },
+      {
+        "name": "Environment",
+        "href": "#",
+        "iconStyle": "",
+        "badge": "",
+        "linkStyle": ""
+      }
+    ]
+  },
+  "blogs": {
+    "main-link": { "name": "blogs", "href": "./blog.html" },
+    "links": [
+      {
+        "name": "Quantum Computing",
+        "href": "#",
+        "iconStyle": "",
+        "badge": "",
+        "linkStyle": ""
+      },
+      {
+        "name": "AI Ethics",
+        "href": "#",
+        "iconStyle": "",
+        "badge": "",
+        "linkStyle": ""
+      },
+      {
+        "name": "Space Exploration",
+        "href": "#",
+        "iconStyle": "",
+        "badge": "",
+        "linkStyle": ""
+      },
+      {
+        "name": "Biotechnology",
+        "href": "#",
+        "iconStyle": "",
+        "badge": "new",
+        "linkStyle": ""
+      },
+      {
+        "name": "Renewable Energy",
+        "href": "#",
+        "iconStyle": "",
+        "badge": "",
+        "linkStyle": ""
+      },
+      {
+        "name": "Biohacking",
+        "href": "#",
+        "iconStyle": "",
+        "badge": "",
+        "linkStyle": ""
+      }
+    ]
+  },
+  "podcasts": {
+    "main-link": { "name": "podcasts", "href": "./podcasts.html" },
+    "links": [
+      {
+        "name": "AI Revolution",
+        "href": "#",
+        "iconStyle": "",
+        "badge": "",
+        "linkStyle": ""
+      },
+      {
+        "name": "AI Revolution",
+        "href": "#",
+        "iconStyle": "",
+        "badge": "new",
+        "linkStyle": ""
+      },
+      {
+        "name": "TechTalk AI",
+        "href": "#",
+        "iconStyle": "",
+        "badge": "",
+        "linkStyle": ""
+      },
+      {
+        "name": "AI Conversations",
+        "href": "#",
+        "iconStyle": "",
+        "badge": "",
+        "linkStyle": ""
+      }
+    ]
+  },
+  "resources": {
+    "main-link": { "name": "resources", "href": "./resources.html" },
+    "links": [
+      {
+        "name": "Whitepapers",
+        "href": "#",
+        "iconStyle": "icon icon--arrow icon--arrow-yellow",
+        "badge": "",
+        "linkStyle": "btn btn--footer-menu-link"
+      },
+      {
+        "name": "Ebooks",
+        "href": "#",
+        "iconStyle": "icon icon--arrow icon--arrow-yellow",
+        "badge": "",
+        "linkStyle": "btn btn--footer-menu-link"
+      },
+      {
+        "name": "Reports",
+        "href": "#",
+        "iconStyle": "icon icon--arrow icon--arrow-yellow",
+        "badge": "",
+        "linkStyle": "btn btn--footer-menu-link"
+      },
+      {
+        "name": "Research Papers",
+        "href": "#",
+        "iconStyle": "icon icon--arrow icon--arrow-yellow",
+        "badge": "",
+        "linkStyle": "btn btn--footer-menu-link"
+      }
+    ]
+  }
+}
